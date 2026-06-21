@@ -10,6 +10,7 @@
     <link href="https://fonts.bunny.net/css?family=inter:400,600&family=montserrat:700,800" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/material-symbols@latest/outlined.css" rel="stylesheet" />
     <script src="tailwind.config.js"></script>
+    <script src="main.js" defer></script>
     <link href="styles.css" rel="stylesheet" />
 </head>
 
@@ -17,18 +18,17 @@
     <!-- TopNavBar -->
     <header class="bg-transparent text-primary top-0 sticky border-b border-outline z-50 bg-white">
         <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
-            <div class="text-headline-md font-headline-md font-extrabold text-on-surface uppercase tracking-widest">
-                ARCHITECT
-            </div>
+            <div data-config="brand" class="text-headline-md font-headline-md font-extrabold text-on-surface uppercase tracking-widest"></div>
             <nav class="hidden md:flex gap-8 items-center">
-                <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest"
-                    href="#">Research</a>
-                <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest"
-                    href="#">Strategy</a>
-                <a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest pb-1"
-                    href="#">Intelligence</a>
-                <a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest"
-                    href="#">Archive</a>
+                <a data-section="hero"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#hero">Introduction</a>
+                <a data-section="articles-section"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#articles-section">Articles</a>
+                <a data-section="epilogue"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#epilogue">Epilogue</a>
             </nav>
             <div class="flex items-center gap-6">
                 <span
@@ -43,18 +43,16 @@
     </header>
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section
+        <section id="hero"
             class="relative bg-on-secondary-fixed text-surface min-h-[614px] flex items-center overflow-hidden grid-plus grid-plus-br">
             <div class="absolute inset-0 z-0">
                 <div class="w-full h-full bg-cover bg-center opacity-30 mix-blend-luminosity"
-                    data-alt="A striking black and white photograph of modern corporate architecture with stark geometric lines, deep shadows, and an expansive feeling of professional rigor. The image is high contrast, sharp, and embodies a serious, data-driven consulting aesthetic without being overly dramatic. There is a sense of immense scale and futuristic capability."
                     style="background-image: url('https://picsum.photos/seed/arch-hero/1920/800')"></div>
             </div>
             <div class="absolute inset-0 bg-diagonal opacity-10 z-0"></div>
             <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop py-section-gap">
                 <div class="max-w-3xl border-l border-surface pl-8 py-4">
-                    <h1 class="text-display-lg font-display-lg uppercase leading-tight mb-6">Intelligence for the Next
-                        Decade</h1>
+                    <h1 data-config="tagline" class="text-display-lg font-display-lg uppercase leading-tight mb-6"></h1>
                 </div>
             </div>
         </section>
@@ -63,246 +61,43 @@
             class="bg-surface py-section-gap border-b border-surface-variant relative grid-plus grid-plus-tl grid-plus-br">
             <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
                 <div class="md:col-span-4">
-                    <h2 class="text-headline-xl font-headline-xl uppercase text-on-surface mb-4">Perspectives</h2>
+                    <h2 data-config="sectionTitle" class="text-headline-xl font-headline-xl uppercase text-on-surface mb-4"></h2>
                     <div class="w-16 h-1 bg-primary mb-8"></div>
                 </div>
                 <div class="md:col-span-8 md:pl-12 border-l border-surface-variant">
-                    <p class="text-headline-md font-headline-md text-on-surface-variant leading-relaxed">
-                        We bring together deep industry expertise and leading-edge technology to help you shape the
-                        future.
-                    </p>
+                    <p data-config="slogan" class="text-headline-md font-headline-md text-on-surface-variant leading-relaxed"></p>
                 </div>
             </div>
         </section>
         <!-- Articles Grid -->
-        <section class="py-section-gap bg-surface">
+        <section id="articles-section" class="py-section-gap bg-surface">
             <div class="max-w-container-max mx-auto px-margin-desktop">
-                <!-- Featured Article -->
-                <article
-                    class="mb-16 border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 relative">
-                    <div class="absolute -top-3 -left-3 text-surface-variant">+</div>
-                    <div class="absolute -top-3 -right-3 text-surface-variant">+</div>
-                    <div class="absolute -bottom-3 -left-3 text-surface-variant">+</div>
-                    <div class="absolute -bottom-3 -right-3 text-surface-variant">+</div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2">
-                        <div
-                            class="h-96 lg:h-auto border-b lg:border-b-0 lg:border-r border-surface-variant relative overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="A pristine, highly detailed rendering of a futuristic digital banking interface overlaid on a sleek, minimalist desk setup in a high-rise office. The scene uses cool blue and slate grey tones, projecting professional authority, high-contrast clarity, and an emotionless, data-driven consulting aesthetic."
-                                src="https://picsum.photos/seed/arch-banking/800/600" />
-                        </div>
-                        <div class="p-12 flex flex-col justify-center">
-                            <div class="flex items-center gap-4 mb-6">
-                                <span
-                                    class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold">Finance
-                                    &amp; Tech</span>
-                                <span class="text-surface-variant">|</span>
-                                <span
-                                    class="text-on-surface-variant font-caption text-caption uppercase tracking-wider">Oct
-                                    24, 2024</span>
-                            </div>
-                            <h3
-                                class="text-headline-lg font-headline-lg mb-6 group-hover:text-primary transition-colors duration-300">
-                                The Future of Digital Banking</h3>
-                            <p class="text-body-lg font-body-lg text-on-surface-variant mb-8 line-clamp-3">
-                                As decentralized ledgers and AI-driven predictive models converge, traditional banking
-                                institutions face a critical inflection point. We analyze the strategic shifts required
-                                to maintain market dominance in the coming decade.
-                            </p>
-                            <div
-                                class="mt-auto flex items-center gap-2 text-on-surface font-label-md text-label-md uppercase tracking-widest group-hover:text-primary transition-colors">
-                                Read Insight <span class="material-symbols-outlined text-sm"
-                                    data-icon="arrow_forward">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- 3-Column Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-                    <!-- Article 2 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-tl">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="An expansive, highly organized global shipping port viewed from an isometric high angle. The image emphasizes geometry, logistics, and supply chain efficiency, rendered in stark, cool grey and navy tones, typical of a high-end corporate sustainability report."
-                                src="https://picsum.photos/seed/arch-supply/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Operations</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Sustainability in Supply Chains</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Evaluating the ROI of closed-loop systems and carbon-neutral logistics networks across
-                                global enterprise operations.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- Article 3 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-tr">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="A macro shot of a complex neural network diagram integrated into a sleek, minimalist corporate boardroom wall. The lighting is sharp and analytical, utilizing a palette of stark whites, deep blacks, and subtle icy blues, evoking a sense of advanced generative AI technology in an enterprise setting."
-                                src="https://picsum.photos/seed/arch-ai/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Technology</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Generative AI: The New Frontier</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Moving beyond the hype to establish robust frameworks for AI deployment, governance, and
-                                value realization.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- Article 4 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-bl">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="A fleet of autonomous delivery vehicles lined up perfectly in an expansive, immaculate warehouse. The composition is highly structured and geometric, shot in high-contrast light mode with a sterile, professional, and hyper-efficient logistical aesthetic."
-                                src="https://picsum.photos/seed/arch-logistics/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Supply
-                                Chain</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Global Logistics Optimization</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Leveraging predictive analytics to mitigate disruptions and enhance resilience in
-                                complex global networks.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- Article 5 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-br">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="An abstract representation of volatile market data, depicted as sharp, intersecting architectural lines and glowing data points within a vast, minimalist grey space. The mood is analytical, rigorous, and visually sharp, appropriate for high-stakes risk management consulting."
-                                src="https://picsum.photos/seed/arch-risk/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Risk
-                                &amp; Strategy</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Risk Management in Volatile Markets</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Advanced methodologies for hedging against macroeconomic shocks and geopolitical
-                                instability in Q4.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- Article 6 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-tl">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="A clean, minimalist retail space viewed from above, showing abstract demographic heatmaps overlaid on the floor plan. The aesthetic is extremely clean, high-contrast, and clinical, using a cool grey palette to analyze consumer behavior trends objectively."
-                                src="https://picsum.photos/seed/arch-consumer/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Marketing</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Consumer Behavior Trends 2025</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Shifts in purchasing power and brand loyalty paradigms driven by generational wealth
-                                transfers.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- Article 7 -->
-                    <article
-                        class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus grid-plus-tr">
-                        <div class="h-64 border-b border-surface-variant overflow-hidden">
-                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="A massive offshore wind farm seen against a stark, pale sky, reflecting in dark, glass-like water. The image is imposing, sharply focused, and emphasizes the industrial scale of energy transition, rendered in a severe, highly professional grey and white colorway."
-                                src="https://picsum.photos/seed/arch-energy/400/300" />
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <span
-                                class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold mb-4">Energy</span>
-                            <h3
-                                class="text-headline-md font-headline-md mb-4 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                                Energy Transition Strategies</h3>
-                            <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mt-auto">
-                                Navigating the capital requirements and regulatory landscapes of decarbonizing heavy
-                                industry.
-                            </p>
-                        </div>
-                    </article>
-                    <!-- More articles can be added here following the same pattern -->
-                </div>
+                <div id="articles-root"></div>
             </div>
         </section>
-        <!-- Subscription Section -->
-        <section
+        <!-- Quote Section -->
+        <section id="epilogue"
             class="bg-primary text-on-primary py-section-gap border-y border-on-secondary-fixed relative grid-plus grid-plus-tl grid-plus-br">
-            <div
-                class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-headline-xl font-headline-xl uppercase mb-6">Stay Informed</h2>
-                    <p class="text-body-lg font-body-lg text-white/80 max-w-md">
-                        Receive monthly executive briefings and proprietary data insights directly to your inbox.
-                        Rigorous analysis for decison makers.
-                    </p>
-                </div>
-                <div>
-                    <div class="bg-on-secondary-fixed p-8 border border-white/20">
-                        <form class="flex flex-col gap-6">
-                            <div>
-                                <label
-                                    class="block text-label-md font-label-md uppercase tracking-widest text-white/60 mb-2">Corporate
-                                    Email</label>
-                                <input
-                                    class="w-full bg-transparent border-b border-white/30 text-white py-3 px-0 focus:ring-0 focus:border-white transition-colors placeholder-white/20"
-                                    placeholder="executive@enterprise.com" type="email" />
-                            </div>
-                            <button
-                                class="w-full bg-white text-on-secondary-fixed font-label-md text-label-md uppercase tracking-widest py-4 hover:bg-surface-variant transition-colors mt-4 flex justify-between items-center px-6"
-                                type="submit">
-                                Subscribe to Insights
-                                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <blockquote>
+                    <p data-config="quote.text"
+                        class="text-display-lg font-display-lg uppercase leading-tight text-center mb-8"></p>
+                    <footer data-config="quote.author"
+                        class="text-right text-body-lg font-body-lg text-white/60 uppercase tracking-widest"></footer>
+                </blockquote>
             </div>
         </section>
     </main>
     <!-- Footer -->
-    <footer
-        class="bg-on-secondary-fixed text-primary grid grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto border-t border-outline w-full">
-        <div class="col-span-4 md:col-span-1 flex flex-col justify-between">
-            <div
-                class="text-headline-md font-headline-md font-black text-surface uppercase tracking-widest mb-8 md:mb-0">
-                ARCHITECT
+    <footer class="bg-on-secondary-fixed text-primary border-t border-outline w-full">
+        <div class="grid grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+            <div class="col-span-4 md:col-span-1">
+                <div data-config="brand"
+                    class="text-headline-md font-headline-md font-black text-surface uppercase tracking-widest"></div>
             </div>
-            <div
-                class="text-body-md font-body-md text-surface-variant text-sm uppercase tracking-wider mt-auto pt-8 border-t border-surface/10 md:border-none">
-                © 2024 ARCHITECT ENTERPRISE. ALL RIGHTS RESERVED.
+            <div id="footer-socials"
+                class="col-span-4 md:col-span-3 flex flex-wrap gap-8 md:justify-end md:items-start text-label-md font-label-md uppercase tracking-widest">
             </div>
-        </div>
-        <div
-            class="col-span-4 md:col-span-3 flex flex-wrap gap-8 md:justify-end md:items-start text-label-md font-label-md uppercase tracking-widest">
-            <a class="text-surface-variant hover:underline decoration-primary underline-offset-4 transition-all"
-                href="#">Terms of Service</a>
-            <a class="text-surface-variant hover:underline decoration-primary underline-offset-4 transition-all"
-                href="#">Privacy Policy</a>
-            <a class="text-surface-variant hover:underline decoration-primary underline-offset-4 transition-all"
-                href="#">Methodology</a>
-            <a class="text-surface-variant hover:underline decoration-primary underline-offset-4 transition-all"
-                href="#">Contact</a>
         </div>
     </footer>
 </body>

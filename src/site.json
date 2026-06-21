@@ -1,0 +1,16 @@
+{
+  "brand": "BAO",
+  "tagline": "Intelligence for the Next Decade",
+  "sectionTitle": "Perspectives",
+  "slogan": "We bring together deep industry expertise and leading-edge technology to help you shape the future.",
+  "quote": {
+    "text": "TO BE OR NOT TO BE, THAT IS A QUESTION",
+    "author": "——Hamlet"
+  },
+  "socials": [
+    { "label": "Twitter",   "url": "#" },
+    { "label": "LinkedIn",  "url": "#" },
+    { "label": "Instagram", "url": "#" },
+    { "label": "WeChat",    "url": "#" }
+  ]
+}
