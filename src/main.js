@@ -55,7 +55,7 @@ async function render() {
       </div>`);
 
     root.insertAdjacentHTML('beforeend', `
-      <article class="mb-16 border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 relative">
+      <article class="mb-16 border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 relative" onclick="location.href='reading.html?path=${encodeURIComponent(main.articlePath)}'" >
         <div class="absolute -top-3 -left-3 text-surface-variant">+</div>
         <div class="absolute -top-3 -right-3 text-surface-variant">+</div>
         <div class="absolute -bottom-3 -left-3 text-surface-variant">+</div>
@@ -79,7 +79,7 @@ async function render() {
       </article>`);
 
     const subsHtml = subs.map((sub, si) => `
-      <article class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus ${corners[si % corners.length]}">
+      <article class="border border-surface-variant group cursor-pointer hover:border-primary transition-colors duration-300 flex flex-col relative grid-plus ${corners[si % corners.length]}" onclick="location.href='reading.html?path=${encodeURIComponent(sub.articlePath)}'" >
         <div class="h-64 border-b border-surface-variant overflow-hidden">
           <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
             src="https://picsum.photos/seed/${imgSeed(topicName + '-sub' + si)}/400/300" />

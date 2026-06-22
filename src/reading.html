@@ -5,12 +5,13 @@
 <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>The Future of Digital Banking - ARCHITECT</title>
+        <title></title>
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <link href="https://fonts.bunny.net/css?family=inter:400,600&family=montserrat:700,800,900" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/material-symbols@latest/outlined.css" rel="stylesheet" />
         <script src="tailwind.config.js"></script>
         <link href="styles.css" rel="stylesheet" />
+        <script src="reading.js" defer></script>
 </head>
 
 <body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pt-20">
@@ -18,9 +19,7 @@
         <nav class="fixed top-0 w-full z-50 bg-surface border-b border-outline/30 flat no shadows text-primary">
                 <div
                         class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-container-max mx-auto">
-                        <div class="font-headline-md text-headline-md font-black tracking-tighter text-on-surface">
-                                ARCHITECT
-                        </div>
+                        <a href="index.html" class="font-headline-md text-headline-md font-black tracking-tighter text-on-surface" data-brand></a>
                         <div class="hidden md:flex space-x-8 font-label-md text-label-md uppercase tracking-wider">
                                 <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70"
                                         href="#">Insights</a>
@@ -46,106 +45,34 @@
                 <!-- Breadcrumbs -->
                 <div
                         class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mb-8 flex items-center space-x-2">
-                        <span>Intelligence</span>
+                        <a href="index.html" class="hover:text-primary transition-colors" data-brand></a>
                         <span class="text-outline/50">/</span>
-                        <span>Strategy</span>
+                        <span id="bc-topic"></span>
                         <span class="text-outline/50">/</span>
-                        <span class="text-primary font-semibold">The Future of Digital Banking</span>
+                        <span id="bc-article" class="text-primary font-semibold"></span>
                 </div>
                 <!-- Article Header -->
                 <header class="mb-12 max-w-4xl">
-                        <h1
+                        <h1 id="article-title"
                                 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-brand-navy mb-6">
-                                The Future of Digital Banking: Navigating the Decentralized Frontier
                         </h1>
                         <div
                                 class="flex items-center text-on-surface-variant font-label-md text-label-md uppercase tracking-wider border-t border-outline/20 pt-4 mt-8 relative">
                                 <div class="grid-intersection"></div>
-                                <span class="mr-4 text-brand-navy">By Dr. Julian Sterling</span>
-                                <span class="mr-4 text-outline">|</span>
-                                <span class="mr-4">Oct 24, 2024</span>
-                                <span class="mr-4 text-outline">|</span>
-                                <span class="flex items-center text-accent"><span
-                                                class="material-symbols-outlined text-[16px] mr-1">schedule</span> 8 Min
-                                        Read</span>
+                                <span id="article-meta"></span>
                         </div>
                 </header>
                 <!-- Hero Image -->
                 <div class="w-full h-[400px] md:h-[600px] mb-16 border border-outline/30 relative">
                         <div class="grid-intersection"></div>
                         <div class="grid-intersection-right"></div>
-                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                                data-alt="A striking, high-resolution architectural photography shot of a modern skyscraper facade. The image features extreme geometric precision, focusing on repetitive glass and steel structures intersecting at sharp angles. The lighting is cool, clinical white daylight casting deep, contrasting shadows. The overall aesthetic is corporate, highly structured, and minimalist, conveying a sense of rigorous data architecture and technological advancement."
-                                src="https://picsum.photos/seed/reading-hero/1920/800" />
+                        <img id="hero-img" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="" />
                 </div>
                 <!-- Article Layout Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
                         <!-- Main Content Column -->
-                        <article class="md:col-span-8 pr-0 md:pr-12 text-on-surface">
-                                <p class="font-body-lg text-body-lg mb-8 leading-relaxed">
-                                        The paradigm of traditional banking is undergoing a seismic shift. As
-                                        decentralized finance (DeFi) protocols mature and regulatory frameworks begin to
-                                        crystallize, established financial institutions face an existential imperative:
-                                        adapt or face irrelevance in a rapidly fragmenting landscape.
-                                </p>
-                                <h2
-                                        class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4 relative">
-                                        <div class="grid-intersection"></div>
-                                        The Erosion of Centralized Monopolies
-                                </h2>
-                                <p class="font-body-md text-body-md mb-6 leading-relaxed">
-                                        Historically, banks have derived their power from their position as central
-                                        arbiters of trust. However, distributed ledger technology mathematically
-                                        guarantees trust without the need for an intermediary. This fundamental
-                                        technological breakthrough is systematically dismantling the primary value
-                                        proposition of legacy banking architectures.
-                                </p>
-                                <!-- Pull Quote -->
-                                <blockquote class="my-12 pl-6 border-l-[4px] border-accent py-2">
-                                        <p class="font-headline-md text-headline-md text-brand-navy italic mb-4">
-                                                "The question is no longer if decentralized systems will replace legacy
-                                                banking infrastructure, but rather how quickly incumbent institutions
-                                                can pivot to become structural nodes within this new network."
-                                        </p>
-                                        <footer
-                                                class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">
-                                                — Strategic Intelligence Briefing, Q3
-                                        </footer>
-                                </blockquote>
-                                <h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">Strategic
-                                        Imperatives for 2025</h3>
-                                <p class="font-body-md text-body-md mb-6 leading-relaxed">
-                                        Institutions must adopt a multi-modal approach to digital transformation. This
-                                        involves not merely digitizing existing processes, but fundamentally
-                                        re-engineering product offerings around smart contracts and programmable money.
-                                </p>
-                                <ul class="space-y-4 mb-8 border-t border-b border-outline/20 py-6 relative">
-                                        <div class="grid-intersection"></div>
-                                        <li class="flex items-start">
-                                                <span
-                                                        class="material-symbols-outlined text-accent mr-3 mt-1">arrow_forward</span>
-                                                <span class="font-body-md text-body-md"><strong>Infrastructure
-                                                                Overhaul:</strong> Phasing out monolithic core banking
-                                                        systems in favor of microservices architectures.</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                                <span
-                                                        class="material-symbols-outlined text-accent mr-3 mt-1">arrow_forward</span>
-                                                <span class="font-body-md text-body-md"><strong>Regulatory
-                                                                Arbitrage:</strong> Proactively engaging with
-                                                        policymakers to shape CBDC (Central Bank Digital Currency)
-                                                        frameworks.</span>
-                                        </li>
-                                        <li class="flex items-start">
-                                                <span
-                                                        class="material-symbols-outlined text-accent mr-3 mt-1">arrow_forward</span>
-                                                <span class="font-body-md text-body-md"><strong>Talent
-                                                                Acquisition:</strong> Aggressively recruiting blockchain
-                                                        engineers and cryptographers from the native Web3
-                                                        ecosystem.</span>
-                                        </li>
-                                </ul>
-                        </article>
+                        <article id="article-body" class="md:col-span-8 pr-0 md:pr-12 text-on-surface"></article>
                         <!-- Sidebar -->
                         <aside class="md:col-span-4 mt-12 md:mt-0">
                                 <div class="bg-surface-container-low border border-outline/30 p-8 relative">
@@ -153,38 +80,7 @@
                                         <h3
                                                 class="font-headline-md text-headline-md text-brand-navy mb-6 uppercase tracking-tight">
                                                 Key Takeaways</h3>
-                                        <div class="space-y-6">
-                                                <div class="pb-4 border-b border-outline/20">
-                                                        <h4
-                                                                class="font-label-md text-label-md text-accent uppercase mb-2">
-                                                                01. Acceleration</h4>
-                                                        <p
-                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
-                                                                DeFi adoption by institutional investors has grown 400%
-                                                                YoY, signaling a shift from retail speculation to
-                                                                structural integration.</p>
-                                                </div>
-                                                <div class="pb-4 border-b border-outline/20">
-                                                        <h4
-                                                                class="font-label-md text-label-md text-accent uppercase mb-2">
-                                                                02. Disintermediation</h4>
-                                                        <p
-                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
-                                                                Smart contracts currently automate $40B in daily
-                                                                transaction volume previously handled by middle-office
-                                                                banking staff.</p>
-                                                </div>
-                                                <div>
-                                                        <h4
-                                                                class="font-label-md text-label-md text-accent uppercase mb-2">
-                                                                03. Synthesis</h4>
-                                                        <p
-                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
-                                                                The ultimate winners will be 'hybrid' institutions that
-                                                                merge the compliance rigor of TradFi with the efficiency
-                                                                of DeFi.</p>
-                                                </div>
-                                        </div>
+                                        <div id="key-takeaways" class="space-y-6"></div>
                                 </div>
                         </aside>
                 </div>
@@ -192,78 +88,14 @@
                 <section class="mt-24 border-t border-outline/30 pt-12 relative">
                         <div class="grid-intersection"></div>
                         <h2 class="font-headline-lg text-headline-lg text-brand-navy mb-8">Related Intelligence</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                <!-- Card 1 -->
-                                <div
-                                        class="border border-outline/30 p-6 hover:bg-surface-container-low transition-colors group cursor-pointer relative">
-                                        <div class="grid-intersection"></div>
-                                        <div
-                                                class="font-caption text-caption text-on-surface-variant uppercase mb-4 tracking-widest">
-                                                Analysis <span class="mx-2">|</span> Policy</div>
-                                        <h3
-                                                class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
-                                                Regulatory Frameworks for Tokenized Assets</h3>
-                                        <p
-                                                class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm line-clamp-3">
-                                                An executive summary of the impending SEC guidelines on security tokens
-                                                and their impact on liquidity pools.</p>
-                                        <div
-                                                class="font-label-md text-label-md text-accent uppercase flex items-center">
-                                                Read Report <span
-                                                        class="material-symbols-outlined ml-2 text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                                        </div>
-                                </div>
-                                <!-- Card 2 -->
-                                <div
-                                        class="border border-outline/30 p-6 hover:bg-surface-container-low transition-colors group cursor-pointer relative">
-                                        <div class="grid-intersection"></div>
-                                        <div
-                                                class="font-caption text-caption text-on-surface-variant uppercase mb-4 tracking-widest">
-                                                Report <span class="mx-2">|</span> Infrastructure</div>
-                                        <h3
-                                                class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
-                                                The Architecture of CBDCs</h3>
-                                        <p
-                                                class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm line-clamp-3">
-                                                A technical breakdown of sovereign digital currency pilot programs
-                                                across the G7 nations.</p>
-                                        <div
-                                                class="font-label-md text-label-md text-accent uppercase flex items-center">
-                                                Read Report <span
-                                                        class="material-symbols-outlined ml-2 text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                                        </div>
-                                </div>
-                                <!-- Card 3 -->
-                                <div
-                                        class="border border-outline/30 p-6 hover:bg-surface-container-low transition-colors group cursor-pointer relative">
-                                        <div class="grid-intersection"></div>
-                                        <div
-                                                class="font-caption text-caption text-on-surface-variant uppercase mb-4 tracking-widest">
-                                                Insights <span class="mx-2">|</span> Security</div>
-                                        <h3
-                                                class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">
-                                                Quantum Threat to Cryptography</h3>
-                                        <p
-                                                class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm line-clamp-3">
-                                                Evaluating the timeline for quantum supremacy and the necessary shift to
-                                                post-quantum encryption standards.</p>
-                                        <div
-                                                class="font-label-md text-label-md text-accent uppercase flex items-center">
-                                                Read Report <span
-                                                        class="material-symbols-outlined ml-2 text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                                        </div>
-                                </div>
-                        </div>
+                        <div id="related-articles" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
                 </section>
         </main>
         <!-- Footer -->
         <footer class="bg-surface-container-lowest w-full py-12 border-t border-outline/20 flat no shadows">
                 <div
                         class="flex flex-col md:flex-row justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto gap-gutter">
-                        <div
-                                class="font-headline-sm text-headline-sm font-bold text-on-surface uppercase tracking-tight">
-                                ARCHITECT
-                        </div>
+                        <a href="index.html" class="font-headline-sm text-headline-sm font-bold text-on-surface uppercase tracking-tight" data-brand></a>
                         <div
                                 class="flex flex-wrap justify-center gap-6 font-caption text-caption uppercase tracking-widest">
                                 <a class="text-on-surface-variant hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100"
