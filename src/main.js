@@ -11,6 +11,9 @@ async function render() {
   document.querySelectorAll('[data-config-href]').forEach(el => {
     el.href = get(config, el.dataset.configHref) ?? '';
   });
+  document.querySelectorAll('[data-config-bg]').forEach(el => {
+    el.style.backgroundImage = `url('${get(config, el.dataset.configBg) ?? ''}')`;
+  });
 
   const socialsEl = document.getElementById('footer-socials');
   if (socialsEl && config.socials) {
@@ -20,11 +23,11 @@ async function render() {
   }
 
   const navLinks = document.querySelectorAll('nav a[data-section]');
-  const activeOn  = ['text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1'];
+  const activeOn = ['text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1'];
   const activeOff = ['text-on-surface-variant'];
   const setActive = id => navLinks.forEach(a => {
     const on = a.dataset.section === id;
-    activeOn.forEach(c  => a.classList.toggle(c, on));
+    activeOn.forEach(c => a.classList.toggle(c, on));
     activeOff.forEach(c => a.classList.toggle(c, !on));
   });
   setActive('hero');
@@ -90,7 +93,7 @@ async function render() {
       </article>`;
 
     const visible = subs.slice(0, 6);
-    const hidden  = subs.slice(6);
+    const hidden = subs.slice(6);
     const hasMore = hidden.length > 0;
 
     let html = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter ${hasMore ? 'mb-4' : 'mb-section-gap'}">${visible.map(subCard).join('')}</div>`;
@@ -111,9 +114,23 @@ async function render() {
   setupSearch(allArticles);
 }
 
-window.expandSubs = function(ti) {
+window.expandSubs = function (ti) {
   document.getElementById(`subs-hidden-${ti}`)?.classList.remove('hidden', 'subs-hidden');
-  document.getElementById(`subs-btn-${ti}`)?.remove();
+  const btn = document.getElementById(`subs-btn-${ti}`);
+  if (btn) btn.innerHTML = `
+    <button onclick="collapseSubs(${ti})" class="border border-outline text-on-surface-variant font-label-md text-label-md uppercase tracking-widest px-8 py-3 hover:border-primary hover:text-primary transition-colors">
+      COLLAPSE
+    </button>`;
+};
+
+window.collapseSubs = function (ti) {
+  const grid = document.getElementById(`subs-hidden-${ti}`);
+  if (grid) { grid.classList.add('hidden', 'subs-hidden'); }
+  const btn = document.getElementById(`subs-btn-${ti}`);
+  if (btn) btn.innerHTML = `
+    <button onclick="expandSubs(${ti})" class="border border-primary text-primary font-label-md text-label-md uppercase tracking-widest px-8 py-3 hover:bg-primary hover:text-on-primary transition-colors">
+      EXPAND TO READ MORE
+    </button>`;
 };
 
 function setupSearch(allArticles) {

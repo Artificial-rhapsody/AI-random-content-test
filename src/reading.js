@@ -49,7 +49,7 @@ async function init() {
     `<span class="mr-4 text-brand-navy">${authors.length ? 'By ' + authors.join(', ') : ''}</span>`;
 
   // Article body
-  document.getElementById('article-body').innerHTML = parseMd(md);
+  document.getElementById('article-body').innerHTML = parseMd(md, `${GITHUB_RAW}/${dir}`);
 
   // Key Takeaways from keyTerms
   const entries = Object.entries(addition.keyTerms || {});
@@ -85,20 +85,23 @@ function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function inline(s) {
+function inline(s, imgBase) {
   return s
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/!\[.*?\]\(.*?\)/g, '')          // strip images
-    .replace(/\[(.+?)\]\(.*?\)/g, '$1')       // flatten links
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+      const url = /^https?:\/\//.test(src) ? src : `${imgBase}/${src}`;
+      return `<img src="${url}" alt="${alt}" class="max-w-full my-4" />`;
+    })
+    .replace(/\[(.+?)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-primary underline underline-offset-2 hover:opacity-70">$1</a>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/~~(.+?)~~/g, '<del>$1</del>')
+    .replace(/`([^`]+)`/g, '<code class="bg-surface-container-low px-1 font-mono text-sm">$1</code>');
 }
 
-function parseMd(md) {
-  // Skip header metadata (everything up to and including first '---' separator)
+function parseMd(md, imgBase) {
   const sep = md.indexOf('\n---\n');
   const body = sep !== -1 ? md.slice(sep + 5) : md;
-
   const lines = body.split('\n');
   let html = '', i = 0;
 
@@ -114,21 +117,34 @@ function parseMd(md) {
       i++; continue;
     }
 
-    // Consecutive list items → arrow icons
-    if (line.startsWith('- ')) {
+    // Unordered list (-, *, +)
+    if (/^[-*+] /.test(line)) {
       let items = '';
-      while (i < lines.length && lines[i].startsWith('- '))
-        items += `<li class="flex items-start"><span class="material-symbols-outlined text-accent mr-3 mt-1">arrow_forward</span><span class="font-body-md text-body-md">${inline(lines[i++].slice(2))}</span></li>`;
+      while (i < lines.length && /^[-*+] /.test(lines[i]))
+        items += `<li class="flex items-start"><span class="material-symbols-outlined text-accent mr-3 mt-1">arrow_forward</span><span class="font-body-md text-body-md">${inline(lines[i++].slice(2), imgBase)}</span></li>`;
       html += `<ul class="space-y-4 mb-8 border-t border-b border-outline/20 py-6">${items}</ul>`;
       continue;
     }
 
-    if      (line.startsWith('### ')) html += `<h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">${inline(line.slice(4))}</h3>`;
-    else if (line.startsWith('## '))  html += `<h2 class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4">${inline(line.slice(3))}</h2>`;
-    else if (line.startsWith('# '))   { /* title already in header */ }
-    else if (line.startsWith('> '))   html += `<blockquote class="my-12 pl-6 border-l-[4px] border-accent py-2"><p class="font-headline-md text-headline-md text-brand-navy italic">${inline(line.slice(2))}</p></blockquote>`;
-    else if (line === '---' || line.trim() === '') { /* skip */ }
-    else html += `<p class="font-body-md text-body-md mb-6 leading-relaxed">${inline(line)}</p>`;
+    // Ordered list
+    if (/^\d+\. /.test(line)) {
+      let items = '', n = 1;
+      while (i < lines.length && /^\d+\. /.test(lines[i])) {
+        const text = lines[i++].replace(/^\d+\. /, '');
+        items += `<li class="flex items-start gap-3"><span class="font-label-md text-label-md text-accent min-w-[1.5rem]">${n++}.</span><span class="font-body-md text-body-md">${inline(text, imgBase)}</span></li>`;
+      }
+      html += `<ol class="space-y-4 mb-8 border-t border-b border-outline/20 py-6">${items}</ol>`;
+      continue;
+    }
+
+    if      (line.startsWith('#### ')) html += `<h4 class="font-headline-sm text-headline-sm text-brand-navy mt-8 mb-3">${inline(line.slice(5), imgBase)}</h4>`;
+    else if (line.startsWith('### '))  html += `<h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">${inline(line.slice(4), imgBase)}</h3>`;
+    else if (line.startsWith('## '))   html += `<h2 class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4">${inline(line.slice(3), imgBase)}</h2>`;
+    else if (line.startsWith('# '))    { /* title already in header */ }
+    else if (line.startsWith('> '))    html += `<blockquote class="my-12 pl-6 border-l-[4px] border-accent py-2"><p class="font-headline-md text-headline-md text-brand-navy italic">${inline(line.slice(2), imgBase)}</p></blockquote>`;
+    else if (/^-{3,}$/.test(line.trim())) html += `<hr class="border-t border-outline/20 my-8" />`;
+    else if (line.trim() === '')       { /* skip */ }
+    else html += `<p class="font-body-md text-body-md mb-6 leading-relaxed">${inline(line, imgBase)}</p>`;
 
     i++;
   }
