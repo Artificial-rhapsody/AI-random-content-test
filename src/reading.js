@@ -4,11 +4,11 @@ async function init() {
   if (!articlePath) return;
 
   const dir = articlePath.replace(/\/article\.md$/, '');
-  const GITHUB_RAW = 'https://raw.githubusercontent.com/Artificial-rhapsody/AI-random-content-test/main';
+  const config = await fetch('site.json').then(r => r.json());
+  const GITHUB_RAW = config.githubRaw;
 
-  const [{ topics }, config, md, addition] = await Promise.all([
+  const [{ topics }, md, addition] = await Promise.all([
     fetch('articles.json').then(r => r.json()),
-    fetch('site.json').then(r => r.json()),
     fetch(`${GITHUB_RAW}/${articlePath}`).then(r => r.text()),
     fetch(`${GITHUB_RAW}/${dir}/addition.json`).then(r => r.json()).catch(() => ({})),
   ]);
