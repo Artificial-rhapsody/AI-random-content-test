@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-06-23T09:46:02.906Z",
+  "topics": [
+    {
+      "topicName": "建筑学原理",
+      "main": {
+        "name": "建筑学原理",
+        "abstract": "This article traces the evolution of architectural principles from Vitruvius's ancient triad of strength, utility, and beauty through Modernism and Postmodernism to today's imperatives of sustainability, resilience, and inclusivity. It argues that great architecture is a conversation with its site — a response to light, wind, history, and culture.",
+        "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/建筑学原理/头文章/cover.jpg",
+        "articlePath": "Content/建筑学原理/头文章/article.md"
+      },
+      "subs": [
+        {
+          "name": "副文章1",
+          "abstract": "An essay exploring architecture as a non-verbal language that shapes emotion and behavior through materials, proportions, and light. From the awe-inspiring verticality of Gothic cathedrals to the oppressive weight of fascist buildings, the piece examines how structures speak — and sometimes lie — without words.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/建筑学原理/副文章/副文章1/cover.jpg",
+          "articlePath": "Content/建筑学原理/副文章/副文章1/article.md"
+        },
+        {
+          "name": "副文章2",
+          "abstract": "An introduction to Gothic cathedral engineering, explaining how the pointed arch, ribbed vault, and flying buttress enabled medieval builders to create towering spaces filled with colored light. The article situates these innovations within their cultural context as encyclopedias in stone for an illiterate population.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/建筑学原理/副文章/副文章2/cover.jpg",
+          "articlePath": "Content/建筑学原理/副文章/副文章2/article.md"
+        },
+        {
+          "name": "副文章3",
+          "abstract": "An exploration of the mathematical foundations of architectural beauty, from the golden ratio in the Parthenon to Renaissance harmonic proportions and modern neuroaesthetics. The piece argues that proportion is not an arbitrary aesthetic choice but a recurring human preference rooted in geometry and perception.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/建筑学原理/副文章/副文章3/cover.jpg",
+          "articlePath": "Content/建筑学原理/副文章/副文章3/article.md"
+        }
+      ]
+    },
+    {
+      "topicName": "人工智能在流水线的应用",
+      "main": {
+        "name": "人工智能在流水线的应用",
+        "abstract": "A comprehensive overview of how artificial intelligence is transforming manufacturing through predictive maintenance, computer vision quality control, and generative design. The article weighs the productivity gains against labor displacement and argues that the assembly line is not disappearing — it is waking up.",
+        "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/人工智能在流水线的应用/头文章/cover.jpg",
+        "articlePath": "Content/人工智能在流水线的应用/头文章/article.md"
+      },
+      "subs": [
+        {
+          "name": "副文章1",
+          "abstract": "A news-style case study of AI visual inspection systems deployed in Shenzhen's electronics factories, where deep-learning models now catch microscopic defects at superhuman speed. The article examines both the dramatic quality improvements and the human cost of eliminating tens of thousands of inspection jobs.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/人工智能在流水线的应用/副文章/副文章1/cover.jpg",
+          "articlePath": "Content/人工智能在流水线的应用/副文章/副文章1/article.md"
+        },
+        {
+          "name": "副文章2",
+          "abstract": "A creative essay written from the perspective of a factory robot addressing its human coworker. Through the robot's voice, the piece meditates on the nature of measurement versus meaning, efficiency versus intuition, and the irreplaceable human capacity to value what machines can only quantify.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/人工智能在流水线的应用/副文章/副文章2/cover.jpg",
+          "articlePath": "Content/人工智能在流水线的应用/副文章/副文章2/article.md"
+        },
+        {
+          "name": "副文章3",
+          "abstract": "An essay confronting the human cost of manufacturing automation, focusing on displaced workers in China's Pearl River Delta. It argues that while automation frees people from dangerous labor, the transition requires not just retraining programs but a social safety net and a broader cultural revaluation of human work.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/人工智能在流水线的应用/副文章/副文章3/cover.jpg",
+          "articlePath": "Content/人工智能在流水线的应用/副文章/副文章3/article.md"
+        },
+        {
+          "name": "副文章4",
+          "abstract": "An introduction to digital twin technology — real-time virtual replicas of physical factories that predict failures and optimize production before problems occur. The article traces the concept from NASA spacecraft simulations to modern smart factories and explores the emerging integration with generative AI for self-optimizing production lines.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/人工智能在流水线的应用/副文章/副文章4/cover.jpg",
+          "articlePath": "Content/人工智能在流水线的应用/副文章/副文章4/article.md"
+        }
+      ]
+    },
+    {
+      "topicName": "英国历史",
+      "main": {
+        "name": "英国历史",
+        "abstract": "A sweeping overview of British history emphasizing the island's distinctive quality of continuity — from Roman walls to Norman feudalism, from imperial dominance to managed decline. The article argues that Britain is a palimpsest: a text written and rewritten over millennia but never fully erased.",
+        "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/头文章/cover.jpg",
+        "articlePath": "Content/英国历史/头文章/article.md"
+      },
+      "subs": [
+        {
+          "name": "副文章1",
+          "abstract": "An essay on everyday life in Victorian Britain, exploring the era's sharp duality: the glittering Crystal Palace versus the East End slums, domestic comfort built on child labor, and the moral urgency that drove the great social reform movements. Charles Dickens serves as the guide through a world of extremes.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章1/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章1/article.md"
+        },
+        {
+          "name": "副文章2",
+          "abstract": "A piece of creative journalism profiling Margaret Ashby, head conservator at Warwick Castle, who has spent forty-three years preserving a thousand-year-old fortress. Through her voice, the article reflects on what it means to conserve the past — knowing when to restore and when to let the wear tell its own story.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章2/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章2/article.md"
+        },
+        {
+          "name": "副文章3",
+          "abstract": "An introduction to the Wars of the Roses, the thirty-year dynastic civil war between Lancaster and York that decimated England's nobility and ended with Henry Tudor's victory at Bosworth Field in 1485. The article frames the conflict as a family feud that inadvertently forged the centralized modern British state.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章3/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章3/article.md"
+        },
+        {
+          "name": "副文章4",
+          "abstract": "An essay tracing how tea — originally a Chinese beverage — became the defining drink of British identity, funded by the opium trade and built on colonial plantations in India and Ceylon. The piece connects the gentle ritual of afternoon tea to the violent imperial economy that made it possible.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章4/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章4/article.md"
+        },
+        {
+          "name": "副文章5",
+          "abstract": "An introduction to Hadrian's Wall, the eighty-mile Roman fortification built across northern Britain in 122 CE. The article examines the wall not as a simple barrier but as a controlled membrane for regulating movement between Roman and non-Roman worlds, and describes the surprisingly domestic garrison life revealed by the Vindolanda tablets.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章5/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章5/article.md"
+        },
+        {
+          "name": "副文章6",
+          "abstract": "An introduction to Magna Carta, the 1215 charter forced upon King John by rebellious barons that established the principle that the monarch is subject to the law. The article traces how a failed peace treaty, repeatedly reissued after John's death, evolved from a list of baronial grievances into a foundational document of constitutional government, cited by American revolutionaries and Nelson Mandela alike.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章6/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章6/article.md"
+        },
+        {
+          "name": "副文章7",
+          "abstract": "A historical narrative of the Blitz, the fifty-seven consecutive nights of German bombing that killed over 40,000 British civilians between September 1940 and May 1941. The article examines both the curated mythology of defiant resilience and the messier reality of Tube-station dormitories, looting, class tension, and the uneven distribution of destruction across London's neighborhoods.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章7/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章7/article.md"
+        },
+        {
+          "name": "副文章8",
+          "abstract": "An essay on Shakespeare's England, arguing that the playwright transformed English from a provincial tongue into a literary language capable of anything. The article situates his work in the rowdy, socially mixed world of the Elizabethan theater and the broader context of religious conflict, exploration, plague, and the uncertain succession that defined the late Tudor period.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章8/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章8/article.md"
+        },
+        {
+          "name": "副文章9",
+          "abstract": "A social history essay on child labor during Britain's Industrial Revolution, when children as young as four worked twelve-hour days in mills and mines. The article examines the slow, fiercely resisted reform movement — from the Factory Act of 1833 to the moral awakening driven by Dickens and Blake — that gradually established the then-radical principle that childhood is a right deserving legal protection.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/英国历史/副文章/副文章9/cover.jpg",
+          "articlePath": "Content/英国历史/副文章/副文章9/article.md"
+        }
+      ]
+    },
+    {
+      "topicName": "中美文化交流",
+      "main": {
+        "name": "中美文化交流",
+        "abstract": "A historical overview of cultural exchange between China and the United States, from sixteenth-century traders to the present day. The article traces the asymmetrical flow of ideas through missionaries, cinema, literature, and social media, arguing that the relationship is not one of convergence but of continuous, imperfect translation.",
+        "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/中美文化交流/头文章/cover.jpg",
+        "articlePath": "Content/中美文化交流/头文章/article.md"
+      },
+      "subs": [
+        {
+          "name": "副文章1",
+          "abstract": "A news report on the nearly 290,000 Chinese students enrolled at American universities, framing educational exchange as a form of quiet diplomacy that persists despite deteriorating official relations. The piece follows one student's experience and examines how these academic migrations reshape both cultures at the individual level.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/中美文化交流/副文章/副文章1/cover.jpg",
+          "articlePath": "Content/中美文化交流/副文章/副文章1/article.md"
+        },
+        {
+          "name": "副文章2",
+          "abstract": "An essay tracing the evolution of Chinese food in America — from the pragmatic inventions of nineteenth-century Cantonese railroad cooks to the rise of regional Chinese cuisines in the twenty-first century. It argues that American Chinese food is not a corrupted copy but a cuisine of survival, and that something authentically third has emerged from the collision of two culinary traditions.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/中美文化交流/副文章/副文章2/cover.jpg",
+          "articlePath": "Content/中美文化交流/副文章/副文章2/article.md"
+        },
+        {
+          "name": "副文章3",
+          "abstract": "An essay on the century-long romance between Hollywood and Chinese martial arts, from Bruce Lee's breakthrough to the Shaw Brothers' grindhouse era and the wire-fu revolution of The Matrix. The piece also explores how kung fu carried Daoist and Buddhist philosophy into Western wellness culture through tai chi and qigong.",
+          "coverUrl": "https://github.com/Artificial-rhapsody/AI-random-content-test/tree/main/Content/中美文化交流/副文章/副文章3/cover.jpg",
+          "articlePath": "Content/中美文化交流/副文章/副文章3/article.md"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title></title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.bunny.net/css?family=inter:400,600&family=montserrat:700,800" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/material-symbols@latest/outlined.css" rel="stylesheet" />
+    <script src="tailwind.config.js"></script>
+    <script src="main.js" defer></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <header class="bg-transparent text-primary top-0 sticky border-b border-outline z-50 bg-white">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div data-config="brand" class="text-headline-md font-headline-md font-extrabold text-on-surface uppercase tracking-widest"></div>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a data-section="hero"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#hero">Introduction</a>
+                <a data-section="articles-section"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#articles-section">Articles</a>
+                <a data-section="epilogue"
+                    class="font-label-md text-label-md hover:text-primary transition-colors duration-200 uppercase tracking-widest text-on-surface-variant"
+                    href="#epilogue">Epilogue</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <span
+                    class="material-symbols-outlined text-on-surface cursor-pointer hover:text-primary transition-colors"
+                    data-icon="search">search</span>
+                <a href="#" data-config-href="github"
+                    target="_blank"
+                    class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 uppercase tracking-widest hover:bg-black transition-colors">
+                    Source Code
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero"
+            class="relative bg-on-secondary-fixed text-surface min-h-[614px] flex items-center overflow-hidden grid-plus grid-plus-br">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center opacity-30 mix-blend-luminosity"
+                    data-config-bg="heroImage"></div>
+            </div>
+            <div class="absolute inset-0 bg-diagonal opacity-10 z-0"></div>
+            <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop py-section-gap">
+                <div class="max-w-3xl border-l border-surface pl-8 py-4">
+                    <h1 data-config="tagline" class="text-display-lg font-display-lg uppercase leading-tight mb-6"></h1>
+                </div>
+            </div>
+        </section>
+        <!-- Intro Section -->
+        <section
+            class="bg-surface py-section-gap border-b border-surface-variant relative grid-plus grid-plus-tl grid-plus-br">
+            <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <div class="md:col-span-4">
+                    <h2 data-config="sectionTitle" class="text-headline-xl font-headline-xl uppercase text-on-surface mb-4"></h2>
+                    <div class="w-16 h-1 bg-primary mb-8"></div>
+                </div>
+                <div class="md:col-span-8 md:pl-12 border-l border-surface-variant">
+                    <p data-config="slogan" class="text-headline-md font-headline-md text-on-surface-variant leading-relaxed"></p>
+                </div>
+            </div>
+        </section>
+        <!-- Articles Grid -->
+        <section id="articles-section" class="py-section-gap bg-surface">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <div id="articles-root"></div>
+            </div>
+        </section>
+        <!-- Quote Section -->
+        <section id="epilogue"
+            class="bg-primary text-on-primary py-section-gap border-y border-on-secondary-fixed relative grid-plus grid-plus-tl grid-plus-br">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <blockquote>
+                    <p data-config="quote.text"
+                        class="text-display-lg font-display-lg uppercase leading-tight text-center mb-8"></p>
+                    <footer data-config="quote.author"
+                        class="text-right text-body-lg font-body-lg text-white/60 uppercase tracking-widest"></footer>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-on-secondary-fixed text-primary border-t border-outline w-full">
+        <div class="grid grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+            <div class="col-span-4 md:col-span-1">
+                <div data-config="brand"
+                    class="text-headline-md font-headline-md font-black text-surface uppercase tracking-widest"></div>
+            </div>
+            <div id="footer-socials"
+                class="col-span-4 md:col-span-3 flex flex-wrap gap-8 md:justify-end md:items-start text-label-md font-label-md uppercase tracking-widest">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
