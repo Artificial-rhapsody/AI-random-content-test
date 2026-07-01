@@ -168,6 +168,54 @@ function parseMd(md, imgBase) {
       continue;
     }
 
+    // GFM table — starts with |
+    if (line.startsWith('|')) {
+      const rows = [];
+      while (i < lines.length && lines[i].startsWith('|')) rows.push(lines[i++]);
+
+      const parseRow = r => r.split('|').slice(1, -1).map(c => c.trim());
+      const isSep    = r => /^\|[\s|:-]+\|$/.test(r.trim()) && r.includes('---');
+      const colAlign = c => {
+        const s = c.trim();
+        if (s.startsWith(':') && s.endsWith(':')) return 'text-center';
+        if (s.endsWith(':')) return 'text-right';
+        return 'text-left';
+      };
+
+      // Expect: header row, separator row, then body rows
+      if (rows.length >= 2 && isSep(rows[1])) {
+        const headers = parseRow(rows[0]);
+        const aligns  = parseRow(rows[1]).map(colAlign);
+        const body    = rows.slice(2);
+
+        const ths = headers.map((h, ci) =>
+          `<th class="font-label-md text-label-md text-brand-navy uppercase tracking-wide px-4 py-3 border-r border-outline/20 last:border-r-0 ${aligns[ci] ?? 'text-left'}">${inline(h, imgBase)}</th>`
+        ).join('');
+
+        const trs = body.map(r => {
+          const cells = parseRow(r);
+          const tds = headers.map((_, ci) =>
+            `<td class="font-body-md text-body-md text-on-surface px-4 py-3 border-r border-outline/20 last:border-r-0 ${aligns[ci] ?? 'text-left'}">${inline(cells[ci] ?? '', imgBase)}</td>`
+          ).join('');
+          return `<tr class="border-b border-outline/10 last:border-b-0 hover:bg-surface-container-low transition-colors">${tds}</tr>`;
+        }).join('');
+
+        html += `
+          <div class="overflow-x-auto my-8 border border-outline/20">
+            <table class="w-full text-sm border-collapse">
+              <thead class="bg-surface-container-low border-b border-outline/20">
+                <tr>${ths}</tr>
+              </thead>
+              <tbody>${trs}</tbody>
+            </table>
+          </div>`;
+      } else {
+        // Malformed — fall back to plain text
+        rows.forEach(r => { html += `<p class="font-body-md text-body-md mb-6 leading-relaxed">${inline(r, imgBase)}</p>`; });
+      }
+      continue;
+    }
+
     if (line.startsWith('#### ')) html += `<h4 class="font-headline-sm text-headline-sm text-brand-navy mt-8 mb-3">${inline(line.slice(5), imgBase)}</h4>`;
     else if (line.startsWith('### ')) html += `<h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">${inline(line.slice(4), imgBase)}</h3>`;
     else if (line.startsWith('## ')) html += `<h2 class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4">${inline(line.slice(3), imgBase)}</h2>`;
