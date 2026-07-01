@@ -86,7 +86,23 @@ function esc(s) {
 }
 
 function inline(s, imgBase) {
-  return s
+  // Extract $...$ inline math before HTML escaping to protect LaTeX special chars
+  const mathSlots = [];
+  s = s.replace(/\$([^\$\n]+?)\$/g, (_, latex) => {
+    const idx = mathSlots.length;
+    if (typeof katex !== 'undefined') {
+      try {
+        mathSlots.push(katex.renderToString(latex.trim(), { throwOnError: false }));
+      } catch (e) {
+        mathSlots.push(`<span class="font-mono text-sm text-on-surface-variant">$${esc(latex)}$</span>`);
+      }
+    } else {
+      mathSlots.push(`<span class="font-mono text-sm">$${latex}$</span>`);
+    }
+    return `\x00m${idx}\x00`;
+  });
+
+  s = s
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
       const url = /^https?:\/\//.test(src) ? src : `${imgBase}/${src}`;
@@ -97,6 +113,9 @@ function inline(s, imgBase) {
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/~~(.+?)~~/g, '<del>$1</del>')
     .replace(/`([^`]+)`/g, '<code class="bg-surface-container-low px-1 font-mono text-sm">$1</code>');
+
+  // Restore KaTeX-rendered math
+  return s.replace(/\x00m(\d+)\x00/g, (_, i) => mathSlots[+i]);
 }
 
 function parseMd(md, imgBase) {
@@ -107,6 +126,18 @@ function parseMd(md, imgBase) {
 
   while (i < lines.length) {
     const line = lines[i];
+
+    // Display math block $$ ... $$
+    if (line.trimEnd() === '$$') {
+      let latex = '';
+      i++;
+      while (i < lines.length && lines[i].trimEnd() !== '$$') latex += lines[i++] + '\n';
+      const rendered = typeof katex !== 'undefined'
+        ? katex.renderToString(latex.trim(), { displayMode: true, throwOnError: false })
+        : `<pre class="font-mono text-sm overflow-x-auto">${esc(latex.trim())}</pre>`;
+      html += `<div class="my-8 overflow-x-auto text-center">${rendered}</div>`;
+      i++; continue;
+    }
 
     // Fenced code block → left-border block
     if (line.startsWith('```')) {
@@ -137,13 +168,13 @@ function parseMd(md, imgBase) {
       continue;
     }
 
-    if      (line.startsWith('#### ')) html += `<h4 class="font-headline-sm text-headline-sm text-brand-navy mt-8 mb-3">${inline(line.slice(5), imgBase)}</h4>`;
-    else if (line.startsWith('### '))  html += `<h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">${inline(line.slice(4), imgBase)}</h3>`;
-    else if (line.startsWith('## '))   html += `<h2 class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4">${inline(line.slice(3), imgBase)}</h2>`;
-    else if (line.startsWith('# '))    { /* title already in header */ }
-    else if (line.startsWith('> '))    html += `<blockquote class="my-12 pl-6 border-l-[4px] border-accent py-2"><p class="font-headline-md text-headline-md text-brand-navy italic">${inline(line.slice(2), imgBase)}</p></blockquote>`;
+    if (line.startsWith('#### ')) html += `<h4 class="font-headline-sm text-headline-sm text-brand-navy mt-8 mb-3">${inline(line.slice(5), imgBase)}</h4>`;
+    else if (line.startsWith('### ')) html += `<h3 class="font-headline-md text-headline-md text-brand-navy mt-10 mb-4">${inline(line.slice(4), imgBase)}</h3>`;
+    else if (line.startsWith('## ')) html += `<h2 class="font-headline-lg text-headline-lg text-brand-navy mt-12 mb-6 border-b border-outline/20 pb-4">${inline(line.slice(3), imgBase)}</h2>`;
+    else if (line.startsWith('# ')) { /* title already in header */ }
+    else if (line.startsWith('> ')) html += `<blockquote class="my-12 pl-6 border-l-[4px] border-accent py-2"><p class="font-headline-md text-headline-md text-brand-navy italic">${inline(line.slice(2), imgBase)}</p></blockquote>`;
     else if (/^-{3,}$/.test(line.trim())) html += `<hr class="border-t border-outline/20 my-8" />`;
-    else if (line.trim() === '')       { /* skip */ }
+    else if (line.trim() === '') { /* skip */ }
     else html += `<p class="font-body-md text-body-md mb-6 leading-relaxed">${inline(line, imgBase)}</p>`;
 
     i++;
