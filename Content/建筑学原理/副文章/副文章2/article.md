@@ -11,6 +11,10 @@ The secret was not magic but engineering — though for medieval builders, the l
 
 What happened next was a building boom unlike anything Europe had seen. In less than a century, dozens of cathedrals rose across France: Chartres, Reims, Amiens, Bourges, Beauvais. Each pushed the limits further. The nave of Amiens reached 42 meters — the height of a fourteen-story building, built with nothing but stone, timber, and human muscle. Beauvais aimed even higher and famously collapsed — twice — teaching a hard lesson about the difference between ambition and hubris.
 
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
 The Gothic cathedral was more than a building; it was an encyclopedia in stone. In an age when most people could not read, the sculptures and stained-glass windows told the entire Christian story: creation, fall, redemption, judgment. Gargoyles guarded the edges, grotesque and half-animal, reminding the faithful of the demons waiting outside the church's protection. The labyrinth set into the floor of Chartres allowed pilgrims to make a symbolic journey to Jerusalem without leaving France.
 
 And the light — the light was everything. Abbot Suger, the visionary behind Saint-Denis, wrote that the colored glass transformed the church into "a strange region of the universe which exists somewhere between the slime of earth and the purity of heaven." The windows were not decoration; they were the point.
