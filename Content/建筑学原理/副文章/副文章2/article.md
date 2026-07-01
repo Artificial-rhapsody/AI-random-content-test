@@ -17,6 +17,12 @@ $$
 
 The Gothic cathedral was more than a building; it was an encyclopedia in stone. In an age when most people could not read, the sculptures and stained-glass windows told the entire Christian story: creation, fall, redemption, judgment. Gargoyles guarded the edges, grotesque and half-animal, reminding the faithful of the demons waiting outside the church's protection. The labyrinth set into the floor of Chartres allowed pilgrims to make a symbolic journey to Jerusalem without leaving France.
 
+| 名称         | 类型     | 说明           |
+|:------------|:-------:|---------------:|
+| articlePath | string  | 文章相对路径    |
+| coverUrl| string  | 封面图 URL      |
+| abstract    | string  | 摘要文本        |
+
 And the light — the light was everything. Abbot Suger, the visionary behind Saint-Denis, wrote that the colored glass transformed the church into "a strange region of the universe which exists somewhere between the slime of earth and the purity of heaven." The windows were not decoration; they were the point.
 
 Today, a thousand years after the first pointed arch was raised, Gothic cathedrals still draw millions of visitors. They remain among the tallest stone structures ever built. We have better tools now — steel, concrete, computer modeling — but we have not built anything that makes people feel quite the way Chartres does at sunset, when the western rose window catches fire and the whole building seems to float.
